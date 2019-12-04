@@ -58,7 +58,6 @@ printf("\n Wrong choice menu");
     }while(ch!=6);
 }
 
-/* TO create an empty node */
 void create()
 {
 int data;
@@ -71,8 +70,6 @@ scanf("%d", &data);
     temp->n = data;
     count++;
 }
-
-/*  TO insert at beginning */
 void insert1()
 {
     if (h == NULL)
@@ -90,7 +87,6 @@ void insert1()
     }
 }
 
-/* To insert at end */
 void insert2()
 {
     if (h == NULL)
@@ -107,8 +103,6 @@ void insert2()
         temp1 = temp;
     }
 }
-
-/* To insert at any position */
 void insert3()
 {
 intpos, i = 2;
@@ -149,7 +143,6 @@ i++;
     }
 }
 
-/* To delete an element */
 void delete()
 {
 inti = 1, pos;
@@ -166,7 +159,7 @@ printf("\n Error : Position out of range to delete");
     }
     if (h == NULL)
     {
-printf("\n Error : Empty list no elements to delete");
+printf("\n Empty list no elements to delete");
         return;
     }
     else
@@ -190,7 +183,7 @@ printf("Node deleted from list");
         {
             temp2->prev->next = NULL;
             free(temp2);
-printf("Node deleted from list");
+printf("Node deleted");
             return;
         }
         temp2->next->prev = temp2->prev;
@@ -203,8 +196,6 @@ printf("\n Node deleted");
     }
     count--;
 }
-
-/* Traverse from beginning */
 void traversebeg()
 {
     temp2 = h;

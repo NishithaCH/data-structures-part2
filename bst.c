@@ -18,10 +18,6 @@ int key;
    node *new_node, *root, *tmp, *parent;
    node *get_node();
    root = NULL;
-printf("\nProgram For Binary Search Tree ");
-   
-
-
 do {
 printf("\n1.Create");
 printf("\n2.Search");
@@ -37,7 +33,7 @@ new_node = get_node();
 printf("\nEnter The Element ");
 scanf("%d", &new_node->data);
 
-            if (root == NULL) /* Tree is not Created */
+            if (root == NULL)
                root = new_node;
             else
                insert(root, new_node);
@@ -68,9 +64,7 @@ inorder(root);
       }
    } while (choice != 4);
 }
-/*
- Get new Node
- */
+
 node *get_node() {
    node *temp;
    temp = (node *) malloc(sizeof(node));
@@ -81,9 +75,7 @@ temp->lchild = NULL;
  return temp;
 
 }
-/*
- This function is for creating a binary search tree
- */
+
 void insert(node *root, node *new_node) {
    if (new_node->data < root->data) {
       if (root->lchild == NULL)
@@ -99,10 +91,7 @@ void insert(node *root, node *new_node) {
          insert(root->rchild, new_node);
    }
 }
-/*
- This function is for searching the node from
- binary Search Tree
- */
+
 node *search(node *root, int key, node **parent) {
    node *temp;
    
@@ -123,9 +112,6 @@ printf("\nThe %d Element is Present", temp->data);
    return NULL;
 }
 
-/*
- This function displays the tree in inorder fashion
- */
 void inorder(node *temp) {
    if (temp != NULL) {
 inorder(temp->lchild);
